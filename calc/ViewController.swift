@@ -18,6 +18,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var radiogroup: NSMatrix!
     
     @IBOutlet weak var convBtn: NSButton!
+    @IBOutlet weak var resetBtn: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,10 @@ class ViewController: NSViewController {
         }
     }
     
+    @IBAction func resetBtnClick(_ sender: Any) {
+        self.reset()
+    }
+    
     @IBAction func typeChanged(_ sender: NSMatrix) {
         //print(sender.selectedRow)
     }
@@ -51,6 +56,13 @@ class ViewController: NSViewController {
         didSet {
         // Update the view, if already loaded.
         }
+    }
+    
+    func reset() {
+        c_txt.stringValue = ""
+        f_txt.stringValue = ""
+        k_txt.stringValue = ""
+        result_txt.stringValue = ""
     }
     
     func calcCelsius() {
@@ -85,7 +97,7 @@ class ViewController: NSViewController {
     func calcKelvin() {
         var c: Double?
         if k_txt.stringValue.isEmpty {
-            c = 300
+            c = 293.15
         } else {
             c = Double(k_txt.stringValue)
         }
