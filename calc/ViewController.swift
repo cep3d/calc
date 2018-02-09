@@ -8,6 +8,12 @@
 
 import Cocoa
 
+enum Temperature: Int {
+    case celsius = 0
+    case fahrenheit
+    case kelvin
+}
+
 class ViewController: NSViewController {
 
     @IBOutlet weak var c_txt: NSTextField!
@@ -30,13 +36,13 @@ class ViewController: NSViewController {
     @IBAction func convBtnClick(_ sender: NSButton) {
         let r: Int = radiogroup.selectedRow
         switch r {
-        case 0:
+        case Temperature.celsius.rawValue:
             self.calcCelsius()
             break
-        case 1:
+        case Temperature.fahrenheit.rawValue:
             self.calcFahrenheit()
             break
-        case 2:
+        case Temperature.kelvin.rawValue:
             self.calcKelvin()
             break
         default:

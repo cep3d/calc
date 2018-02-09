@@ -48,6 +48,7 @@
 		8282815C202C431D00942E3A /* calcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82828160202C431D00942E3A /* calcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calcUITests.swift; sourceTree = "<group>"; };
 		82828162202C431D00942E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82F50379202D978700EE3652 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +101,7 @@
 			children = (
 				8282813F202C431D00942E3A /* AppDelegate.swift */,
 				82828141202C431D00942E3A /* ViewController.swift */,
+				82F50379202D978700EE3652 /* README.md */,
 				82828146202C431D00942E3A /* Assets.xcassets */,
 				82828148202C431D00942E3A /* Main.storyboard */,
 				8282814B202C431D00942E3A /* Info.plist */,
@@ -137,6 +139,7 @@
 				82828138202C431D00942E3A /* Sources */,
 				82828139202C431D00942E3A /* Frameworks */,
 				8282813A202C431D00942E3A /* Resources */,
+				82DA1FC5202D54F700131128 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -196,6 +199,11 @@
 					8282813B202C431D00942E3A = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					82828150202C431D00942E3A = {
 						CreatedOnToolsVersion = 9.0;
@@ -254,6 +262,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		82DA1FC5202D54F700131128 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -a $SRCROOT/DerivedData/calc/Build/Products/Debug/calc.app $SRCROOT";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		82828138202C431D00942E3A /* Sources */ = {
@@ -419,7 +443,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = calc/calc.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VYE5GTPH3N;
@@ -435,7 +458,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = calc/calc.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VYE5GTPH3N;
